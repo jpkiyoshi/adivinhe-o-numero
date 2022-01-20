@@ -1,0 +1,517 @@
+/* Para fazer os LEDs, utilizei 7 formas SVG e as posicionei para que estivessm no formato de dígito.
+Para poder mostrar o número nos LEDs, utilizei classes para cada um dos algarismos (0 a 9). Onde cada algarismo preenche apenas os segmentos SVG que pertencem a ele. */
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 365px;
+  height: 588px;
+  background: linear-gradient(180deg, #eee, #fff 100%);
+}
+
+.title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 29.26px;
+  background-image: linear-gradient(#0093E9, #80D0C7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.line {
+  width: 205px;
+  height: 1px;
+  background: #cfcfcf;
+}
+
+.message {
+  font-family: 'Montserrat', sans-serif;';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -1px;
+  color: #0093E9;
+  margin-bottom: -50px;
+}
+
+.display {
+  display: flex;
+  gap: 5px;
+}
+
+.digit {
+  position: relative;
+  width: 56px;
+  height: 100px;
+}
+
+.top {
+  position: absolute;
+  width: 50.72px;
+  top: -45px;
+  left: 3px;
+}
+
+.top-fill {
+  fill: #dddddd;
+}
+
+.top-left {
+  position: absolute;
+  width: 11.73px;
+  top: -26px;
+  left: 1px;
+}
+
+.top-left-fill {
+  fill: #dddddd;
+}
+
+.top-right {
+  position: absolute;
+  width: 11.73px;
+  top: -26px;
+  left: 44px;
+}
+
+.top-right-fill {
+  fill: #dddddd;
+}
+
+.middle {
+  position: absolute;
+  width: 45.89px;
+  top: -4px;
+  left: 5px;
+}
+
+.middle-fill {
+  fill: #dddddd;
+}
+
+.bottom-left {
+  position: absolute;
+  width: 11.73px;
+  top: 20px;
+  left: 1px;
+}
+
+.bottom-left-fill {
+  fill: #dddddd;
+}
+
+.bottom-right {
+  position: absolute;
+  width: 11.73px;
+  top: 19px;
+  left: 44px;
+}
+
+.bottom-right-fill {
+  fill: #dddddd;
+}
+
+.bottom {
+  position: absolute;
+  width: 50.72px;
+  top: 40px;
+  left: 3px;
+}
+
+.bottom-fill {
+  fill: #dddddd;
+}
+
+#hundreds {
+  display: none;
+}
+
+#tens {
+  display: none;
+}
+
+/* numbers */
+
+/* zero */
+.zero .top-fill,
+.zero .top-left-fill,
+.zero .top-right-fill,
+.zero .bottom-left-fill,
+.zero .bottom-right-fill,
+.zero .bottom-fill {
+  fill: black;
+}
+
+.zero .top-fill.correct,
+.zero .top-left-fill.correct,
+.zero .top-right-fill.correct,
+.zero .bottom-left-fill.correct,
+.zero .bottom-right-fill.correct,
+.zero .bottom-fill.correct {
+  fill: green;
+}
+
+.zero .top-fill.wrong,
+.zero .top-left-fill.wrong,
+.zero .top-right-fill.wrong,
+.zero .bottom-left-fill.wrong,
+.zero .bottom-right-fill.wrong,
+.zero .bottom-fill.wrong {
+  fill: red;
+}
+
+/* one */
+.one .top-right-fill,
+.one .bottom-right-fill {
+  fill: black;
+}
+
+.one .top-right-fill.correct,
+.one .bottom-right-fill.correct {
+  fill: green;
+}
+
+.one .top-right-fill.wrong,
+.one .bottom-right-fill.wrong {
+  fill: red;
+}
+
+/* two */
+.two .top-fill,
+.two .top-right-fill,
+.two .middle-fill,
+.two .bottom-left-fill,
+.two .bottom-fill {
+  fill: black;
+}
+
+.two .top-fill.correct,
+.two .top-right-fill.correct,
+.two .middle-fill.correct,
+.two .bottom-left-fill.correct,
+.two .bottom-fill.correct {
+  fill: green;
+}
+
+.two .top-fill.wrong,
+.two .top-right-fill.wrong,
+.two .middle-fill.wrong,
+.two .bottom-left-fill.wrong,
+.two .bottom-fill.wrong {
+  fill: red;
+}
+
+/* three */
+.three .top-fill,
+.three .top-right-fill,
+.three .middle-fill,
+.three .bottom-right-fill,
+.three .bottom-fill {
+  fill: black;
+}
+
+.three .top-fill.correct,
+.three .top-right-fill.correct,
+.three .middle-fill.correct,
+.three .bottom-right-fill.correct,
+.three .bottom-fill.correct {
+  fill: green;
+}
+
+.three .top-fill.wrong,
+.three .top-right-fill.wrong,
+.three .middle-fill.wrong,
+.three .bottom-right-fill.wrong,
+.three .bottom-fill.wrong {
+  fill: red;
+}
+
+/* four */
+.four .top-left-fill,
+.four .top-right-fill,
+.four .middle-fill,
+.four .bottom-right-fill {
+  fill: black;
+}
+
+.four .top-left-fill.correct,
+.four .top-right-fill.correct,
+.four .middle-fill.correct,
+.four .bottom-right-fill.correct {
+  fill: green;
+}
+
+.four .top-left-fill.wrong,
+.four .top-right-fill.wrong,
+.four .middle-fill.wrong,
+.four .bottom-right-fill.wrong {
+  fill: red;
+}
+
+/* five */
+.five .top-fill,
+.five .top-left-fill,
+.five .middle-fill,
+.five .bottom-right-fill,
+.five .bottom-fill {
+  fill: black;
+}
+
+.five .top-fill.correct,
+.five .top-left-fill.correct,
+.five .middle-fill.correct,
+.five .bottom-right-fill.correct,
+.five .bottom-fill.correct {
+  fill: green;
+}
+
+.five .top-fill.wrong,
+.five .top-left-fill.wrong,
+.five .middle-fill.wrong,
+.five .bottom-right-fill.wrong,
+.five .bottom-fill.wrong {
+  fill: red;
+}
+
+/* six */
+.six .top-fill,
+.six .top-left-fill,
+.six .middle-fill,
+.six .bottom-left-fill,
+.six .bottom-right-fill,
+.six .bottom-fill {
+  fill: black;
+}
+
+.six .top-fill.correct,
+.six .top-left-fill.correct,
+.six .middle-fill.correct,
+.six .bottom-left-fill.correct,
+.six .bottom-right-fill.correct,
+.six .bottom-fill.correct {
+  fill: green;
+}
+
+.six .top-fill.wrong,
+.six .top-left-fill.wrong,
+.six .middle-fill.wrong,
+.six .bottom-left-fill.wrong,
+.six .bottom-right-fill.wrong,
+.six .bottom-fill.wrong {
+  fill: red;
+}
+
+/* seven */
+.seven .top-fill,
+.seven .top-right-fill,
+.seven .bottom-right-fill {
+  fill: black;
+}
+
+.seven .top-fill.correct,
+.seven .top-right-fill.correct,
+.seven .bottom-right-fill.correct {
+  fill: green;
+}
+
+.seven .top-fill.wrong,
+.seven .top-right-fill.wrong,
+.seven .bottom-right-fill.wrong {
+  fill: red;
+}
+
+/* eight */
+.eight * {
+  fill: black;
+}
+
+.eight *.correct {
+  fill: green;
+}
+
+.eight *.wrong {
+  fill: red;
+}
+
+/* nine */
+.nine .top-fill,
+.nine .top-left-fill,
+.nine .top-right-fill,
+.nine .middle-fill,
+.nine .bottom-right-fill,
+.nine .bottom-fill {
+  fill: black;
+}
+
+.nine .top-fill.correct,
+.nine .top-left-fill.correct,
+.nine .top-right-fill.correct,
+.nine .middle-fill.correct,
+.nine .bottom-right-fill.correct,
+.nine .bottom-fill.correct {
+  fill: green;
+}
+
+.nine .top-fill.wrong,
+.nine .top-left-fill.wrong,
+.nine .top-right-fill.wrong,
+.nine .middle-fill.wrong,
+.nine .bottom-right-fill.wrong,
+.nine .bottom-fill.wrong {
+  fill: red;
+}
+
+.btn {
+  visibility: hidden;
+  border: none;
+  background-image: linear-gradient(180deg, #0093E9 0%, #80D0C7 100%);
+  color: white;
+  padding: 1rem .8rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button i {
+  font-size: 12px;
+  margin-right:7px;
+}
+
+.guess-value {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #222222;
+  padding: .7rem;
+  border-radius: 4px;
+  border: 1px solid #cfcfcf;
+  width: 217px;
+}
+
+.guess-value:focus {
+  outline: 1px solid #ff6600;
+}
+
+.guess-value:disabled {
+  background: #F5F5F5;
+}
+
+.guess-btn {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  color: #fff;
+  background-image: linear-gradient(180deg, #0093E9 0%, #80D0C7 100%);
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  text-transform: uppercase;
+  padding: .7rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.guess-btn:disabled {
+  background-image: linear-gradient(180deg, #ddd 0%, #ddd 100%);
+  cursor: default;
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    width: 1000px;
+    height: 588px;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 43.88px;
+  }
+
+  .line {
+    width: 255px;
+  }
+
+  .digit {
+    width: 74.47px;
+    height: 135px;
+  }
+
+  .top {
+    width: 68.48px;
+  }
+
+  .top-left {
+    width: 15.84px;
+    top: -18px;
+    left: -1px;
+  }
+
+  .top-right {
+    width: 15.84px;
+    top: -18px;
+    left: 58px;
+  }
+
+  .middle {
+    width: 61.96px;
+    top: 11.3px;
+    left: 6px;	
+  }
+
+  .bottom-left {
+    width: 15.84px;
+    top: 43px;
+    left: -1px;
+
+  }
+
+  .bottom-right {
+    width: 15.84px;
+    top: 43px;
+    left: 58px;
+
+  }
+
+  .bottom {
+    width: 68.48px;
+    top: 71px;
+  }
+}

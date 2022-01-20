@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Adivinhe o Número</title>
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="container">
+        <div class="title-box">
+          <h1 class="title">Adivinhe o número</h1>
+          <span class="line"></span>
+        </div>
+        <h3 class="message"></h3>
+        <div class="display">
+          <div class="digit" id="hundreds">
+            <!--         top -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 51 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="top"
+            >
+              <path
+                d="M10.5633 10.9838H40.3997L50.7223 1.18114C49.7668 0.442627 48.5715 -5.72205e-06 47.272 -5.72205e-06H3.42983C2.13822 -5.72205e-06 0.952336 0.436317 0 1.16457L10.5633 10.9838Z"
+                fill="red"
+                class="top-fill"
+              />
+            </svg>
+
+            <!--         top left -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 13 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="top-left"
+            >
+              <path
+                d="M2.09081 0.0854111C1.29706 1.05984 0.819702 2.30253 0.819702 3.65648V42.0182C0.819702 44.2171 2.07659 46.1186 3.90946 47.0544L12.5539 40.5758V9.81155L2.09081 0.0854111Z"
+                fill="#DDDDDD"
+                class="top-left-fill"
+              />
+            </svg>
+
+            <!-- top right -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 13 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="top-right"
+            >
+              <path
+                d="M0.421631 10.0569V40.5758L9.06603 47.0544C10.8989 46.1186 12.1558 44.2171 12.1558 42.0181V3.65646C12.1558 2.31041 11.684 1.07718 10.9005 0.106701L0.421631 10.0569Z"
+                fill="#DDDDDD"
+                class="top-right-fill"
+              />
+            </svg>
+
+            <!--         middle -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 47 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="middle"
+            >
+              <path
+                d="M38.5514 0.997624H8.60447L0.62915 6.87654L8.60447 12.7562H20.0222H27.1336H38.5514L46.5267 6.87654L38.5514 0.997624Z"
+                fill="red"
+                class="middle-fill"
+              />
+            </svg>
+
+            <!--         bottom left -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 12 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="bottom-left"
+            >
+              <path
+                d="M1.2711 47.9131C0.47736 46.9395 0 45.6976 0 44.3428V5.98114C0 3.78217 1.25689 1.88144 3.08976 0.944881L11.7342 7.42344V38.1878L1.2711 47.9131Z"
+                fill="#DDDDDD"
+                class="bottom-left-fill"
+              />
+            </svg>
+
+            <!--         bottom right -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 13 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="bottom-right"
+            >
+              <path
+                d="M0.421631 37.9423V7.42341L9.06603 0.944847C10.8989 1.8814 12.1558 3.78214 12.1558 5.98111V44.3428C12.1558 45.6881 11.684 46.9213 10.9005 47.8933L0.421631 37.9423Z"
+                fill="red"
+                class="bottom-right-fill"
+              />
+            </svg>
+
+            <!--         bottom -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 51 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="bottom"
+            >
+              <path
+                d="M10.7907 0.0153933H40.6271L50.9497 9.81885C49.9942 10.5558 48.7989 11 47.4994 11H3.65724C2.36563 11 1.17975 10.5621 0.227417 9.83384L10.7907 0.0153933Z"
+                fill="red"
+                class="bottom-fill"
+              />
+            </svg>
+          </div>
+          <div class="digit" id="tens">
+            <!--         top -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 51 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="top"
+            >
+              <path
+                d="M10.5633 10.9838H40.3997L50.7223 1.18114C49.7668 0.442627 48.5715 -5.72205e-06 47.272 -5.72205e-06H3.42983C2.13822 -5.72205e-06 0.952336 0.436317 0 1.16457L10.5633 10.9838Z"
+                fill="red"
+                class="top-fill"
+              />
+            </svg>
+
+            <!--         top left -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 13 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="top-left"
+            >
+              <path
+                d="M2.09081 0.0854111C1.29706 1.05984 0.819702 2.30253 0.819702 3.65648V42.0182C0.819702 44.2171 2.07659 46.1186 3.90946 47.0544L12.5539 40.5758V9.81155L2.09081 0.0854111Z"
+                fill="#DDDDDD"
+                class="top-left-fill"
+              />
+            </svg>
+
+            <!-- top right -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 13 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="top-right"
+            >
+              <path
+                d="M0.421631 10.0569V40.5758L9.06603 47.0544C10.8989 46.1186 12.1558 44.2171 12.1558 42.0181V3.65646C12.1558 2.31041 11.684 1.07718 10.9005 0.106701L0.421631 10.0569Z"
+                fill="#DDDDDD"
+                class="top-right-fill"
+              />
+            </svg>
+
+            <!--         middle -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 47 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="middle"
+            >
+              <path
+                d="M38.5514 0.997624H8.60447L0.62915 6.87654L8.60447 12.7562H20.0222H27.1336H38.5514L46.5267 6.87654L38.5514 0.997624Z"
+                fill="red"
+                class="middle-fill"
+              />
+            </svg>
+
+            <!--         bottom left -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 12 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="bottom-left"
+            >
+              <path
+                d="M1.2711 47.9131C0.47736 46.9395 0 45.6976 0 44.3428V5.98114C0 3.78217 1.25689 1.88144 3.08976 0.944881L11.7342 7.42344V38.1878L1.2711 47.9131Z"
+                fill="#DDDDDD"
+                class="bottom-left-fill"
+              />
+            </svg>
+
+            <!--         bottom right -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 13 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="bottom-right"
+            >
+              <path
+                d="M0.421631 37.9423V7.42341L9.06603 0.944847C10.8989 1.8814 12.1558 3.78214 12.1558 5.98111V44.3428C12.1558 45.6881 11.684 46.9213 10.9005 47.8933L0.421631 37.9423Z"
+                fill="red"
+                class="bottom-right-fill"
+              />
+            </svg>
+
+            <!--         bottom -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 51 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="bottom"
+            >
+              <path
+                d="M10.7907 0.0153933H40.6271L50.9497 9.81885C49.9942 10.5558 48.7989 11 47.4994 11H3.65724C2.36563 11 1.17975 10.5621 0.227417 9.83384L10.7907 0.0153933Z"
+                fill="red"
+                class="bottom-fill"
+              />
+            </svg>
+          </div>
+          <div class="digit zero" id="units">
+            <!--         top -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 51 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="top"
+            >
+              <path
+                d="M10.5633 10.9838H40.3997L50.7223 1.18114C49.7668 0.442627 48.5715 -5.72205e-06 47.272 -5.72205e-06H3.42983C2.13822 -5.72205e-06 0.952336 0.436317 0 1.16457L10.5633 10.9838Z"
+                fill="red"
+                class="top-fill"
+              />
+            </svg>
+
+            <!--         top left -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 13 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="top-left"
+            >
+              <path
+                d="M2.09081 0.0854111C1.29706 1.05984 0.819702 2.30253 0.819702 3.65648V42.0182C0.819702 44.2171 2.07659 46.1186 3.90946 47.0544L12.5539 40.5758V9.81155L2.09081 0.0854111Z"
+                fill="#DDDDDD"
+                class="top-left-fill"
+              />
+            </svg>
+
+            <!-- top right -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 13 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="top-right"
+            >
+              <path
+                d="M0.421631 10.0569V40.5758L9.06603 47.0544C10.8989 46.1186 12.1558 44.2171 12.1558 42.0181V3.65646C12.1558 2.31041 11.684 1.07718 10.9005 0.106701L0.421631 10.0569Z"
+                fill="#DDDDDD"
+                class="top-right-fill"
+              />
+            </svg>
+
+            <!--         middle -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 47 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="middle"
+            >
+              <path
+                d="M38.5514 0.997624H8.60447L0.62915 6.87654L8.60447 12.7562H20.0222H27.1336H38.5514L46.5267 6.87654L38.5514 0.997624Z"
+                fill="red"
+                class="middle-fill"
+              />
+            </svg>
+
+            <!--         bottom left -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 12 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="bottom-left"
+            >
+              <path
+                d="M1.2711 47.9131C0.47736 46.9395 0 45.6976 0 44.3428V5.98114C0 3.78217 1.25689 1.88144 3.08976 0.944881L11.7342 7.42344V38.1878L1.2711 47.9131Z"
+                fill="#DDDDDD"
+                class="bottom-left-fill"
+              />
+            </svg>
+
+            <!--         bottom right -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 13 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="bottom-right"
+            >
+              <path
+                d="M0.421631 37.9423V7.42341L9.06603 0.944847C10.8989 1.8814 12.1558 3.78214 12.1558 5.98111V44.3428C12.1558 45.6881 11.684 46.9213 10.9005 47.8933L0.421631 37.9423Z"
+                fill="red"
+                class="bottom-right-fill"
+              />
+            </svg>
+
+            <!--         bottom -->
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 51 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="bottom"
+            >
+              <path
+                d="M10.7907 0.0153933H40.6271L50.9497 9.81885C49.9942 10.5558 48.7989 11 47.4994 11H3.65724C2.36563 11 1.17975 10.5621 0.227417 9.83384L10.7907 0.0153933Z"
+                fill="red"
+                class="bottom-fill"
+              />
+            </svg>
+          </div>
+        </div>
+        <button class="btn">
+          <i class="fa-solid fa-rotate-right"></i>Jogar novamente
+        </button>
+        <form id="form">
+          <input
+            type="text"
+            id="number"
+            name="number"
+            placeholder="Digite um número"
+            class="guess-value"
+          />
+          <input type="submit" value="Enviar" class="guess-btn" />
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
